@@ -1,0 +1,39 @@
+﻿@model IEnumerable<LibraryCRUD.Models.Book>
+
+@{
+    ViewData["Title"] = "Books ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1><i class="fas fa-book"></i> Books</h1>
+
+<p>
+    <a class="btn btn-success" asp-action="Create"><i class="fas fa-circle-plus"></i> Create New</a>
+</p>
+<table class="table border-bottom">
+    <thead>
+        <tr>
+            <th class="border-right col-8">
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                Acctions
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="border-right">
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id"><i class="fas fa-file-pen"></i> Edit</a> |
+                    <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id"><i class="fas fa-circle-info"></i> Details</a> |
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id"><i class="fas fa-trash-can"></i> Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

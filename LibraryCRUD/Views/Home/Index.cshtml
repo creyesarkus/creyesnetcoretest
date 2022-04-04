@@ -1,0 +1,59 @@
+﻿@model LibraryCRUD.Models.HomeDetails
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <div class="d-inline-flex">
+        <div class="card mx-2">
+            <div class="card-header d-inline-flex flex-column">
+                <i class="fas fa-5x fa-user-pen"></i>
+                <h3>Authors</h3>
+            </div>
+            <div class="card-body">
+                <h4>Registered Authors</h4>
+                <h4>@Model.Authors</h4>
+            </div>
+            <div class="card-footer">
+                <a class="btn btn-outline-primary" asp-area="" asp-controller="Authors" asp-action="Index"><i class="fas fa-user-pen"></i> Go to Authors</a>
+            </div>
+        </div>
+        <div class="card mx-2">
+            <div class="card-header d-inline-flex flex-column">
+                <i class="fas fa-5x fa-book"></i>
+                <h3>Books</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="px-2">
+                        <h3>Registered Books</h3>
+                        <h3>@Model.Books</h3>
+                    </div>
+                    <div class="px-2">
+                        <h3>Lended Books</h3>
+                        <h3>@Model.LendedBooks</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <a class="btn btn-outline-primary" asp-area="" asp-controller="Books" asp-action="Index"><i class="fas fa-book"></i> Go to Books</a>
+            </div>
+        </div>
+        <div class="card mx-2">
+            <div class="card-header d-inline-flex flex-column">
+                <i class="fas fa-5x fa-user"></i>
+                <h3>Clients</h3>
+            </div>
+            <div class="card-body">
+                <h4>Registered Clients</h4>
+                <h4>@Model.Clients</h4>
+            </div>
+            <div class="card-footer">
+                <a class="btn btn-outline-primary" asp-area="" asp-controller="Clients" asp-action="Index"><i class="fas fa-user"></i> Go to Clients</a>
+            </div>
+        </div>
+    </div>
+
+</div>
